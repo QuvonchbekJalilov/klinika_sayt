@@ -16,7 +16,8 @@ class Appointment extends Model
         'doctor_id',
         'month',
         'time',
-        'description'
+        'description',
+        'status',
     ];
 
     public function doctor(){

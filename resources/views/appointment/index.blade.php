@@ -74,12 +74,12 @@
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <div class="date" id="date"  data-target-input="nearest">
+                                    <div class="date" id="date" data-target-input="nearest">
                                         <input type="text" name="month" class="form-control border-0 datetimepicker-input" placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <div class="time" id="time"  data-target-input="nearest">
+                                    <div class="time" id="time" data-target-input="nearest">
                                         <input type="text" name="time" class="form-control border-0 datetimepicker-input" placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>

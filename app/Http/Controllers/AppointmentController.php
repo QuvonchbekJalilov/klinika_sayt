@@ -63,18 +63,27 @@ class AppointmentController extends Controller
     
     public function edit(Appointment $appointment)
     {
-        //
+        return view('appointment.edit',['appointment' => $appointment, 'doctors' => Doctor::all()]);
     }
 
     
     public function update(Request $request, Appointment $appointment)
     {
-        //
+        $appointment->name = $request->name;
+        $appointment->email = $request->email;
+        $appointment->mobile = $request->mobile;
+        $appointment->status = $request->status;
+        $appointment->save();
+
+        return redirect()->route('list');
+
     }
 
     
     public function destroy(Appointment $appointment)
     {
-        //
+        $appointment->delete();
+
+        return redirect()->route('list');
     }
 }

@@ -10,6 +10,10 @@
         <img src="/storage/<?= $doctor->image ?>" width="300" style="margin-left: 40px;" alt="">
     </div>
     <br>
+    @auth
+        
+    
+    @if(auth()->user()->hasRole('admin'))
     <div class="flex">
         <a href="{{ route('doctor.edit',  ['doctor'=> $doctor->id ])}}" class="btn btn-sm btn-outline-info">Update</a>
         <form action=" {{ route('doctor.destroy',['doctor' => $doctor->id ]) }}" method="post" onsubmit="return confirm('Are you sure you wish to delete?');">
@@ -18,4 +22,6 @@
             <button type="submit" class="btn btn-sm btn-outline-danger">O'chirish</button>
         </form>
     </div>
+    @endif
+    @endauth
 </x-layouts.main>

@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('appointments', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
-            $table->string('mobile');
-            $table->foreignId('doctor_id')->constrained('doctors');
-            $table->string('month');
-            $table->string('time');
-            $table->text('description');
-            $table->string('status')->default('tekshirilmadi');
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appointment');
+        Schema::dropIfExists('roles');
     }
 };

@@ -13,6 +13,7 @@
                 <th scope="col">doctor name</th>
                 <th scope="col">time</th>
                 <th scope="col">description</th>
+                <th scope="col">status</th>
                 <th scope="col">For Updating </th>
 
             </tr>
@@ -27,9 +28,14 @@
                 <td>{{ $item->doctor->first_name}}</td>
                 <td>{{ $item->month}} {{ $item->time}}</td>
                 <td>{{ $item->description}}</td>
+                <td>{{ $item->status}}</td>
                 <td>
-                    <a href=""><i class="fa-solid fa-cart-plus"></i></a>
-                    <a href=""><i class="fa-solid fa-trash"></i></a>
+                    <a href="{{ route('appointment.edit',  ['appointment'=> $item->id ])}}" class="btn btn-sm btn-outline-info">Update</a>
+                    <form action=" {{ route('appointment.destroy',['appointment' => $item->id ]) }}" method="post" onsubmit="return confirm('Are you sure you wish to delete?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
                 </td>
 
             </tr>

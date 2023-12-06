@@ -8,7 +8,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
+                @auth
+                    
+                @if(auth()->user()->hasRole('admin'))
                 <a href="{{ route('list')}}" class="nav-item nav-link">Appointment Table</a>
+                @endif
+                @endauth
                 <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="{{ route('about')}}" class="nav-item nav-link">About</a>
                 <a href="{{ route('service')}}" class="nav-item nav-link">Service</a>

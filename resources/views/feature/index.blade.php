@@ -70,7 +70,13 @@
             </div>
         </div>
     </div>
+    @auth
+        
+   
+    @if(auth()->user()->hasRole('admin'))
     <a href="{{ route('feature.create')}}" class="btn btn-primary">Qo'shish</a>
+    @endif
+    @endauth
 
     <div class="row g-4">
         @foreach($deseases as $desease)

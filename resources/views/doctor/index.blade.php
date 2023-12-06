@@ -12,10 +12,13 @@
                 <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
                 <h1>Our Experience Doctors</h1>
             </div>
+            @auth
 
 
+            @if(auth()->user()->hasRole('admin'))
             <a href="{{ route('doctor.create')}}" class="btn btn-primary">Add</a>
-
+            @endif
+            @endauth
 
             @foreach ($doctors as $doctor )
 

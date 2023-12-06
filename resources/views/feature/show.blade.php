@@ -14,6 +14,7 @@
         
     
     @canany(['update', 'delete'], $desease)
+    @if(auth()->user()->hasRole('admin'))
     <div class="flex">
         <a href="{{ route('feature.edit',  ['feature'=> $desease->id ])}}" class="btn btn-sm btn-outline-info">Update</a>
         <form action=" {{ route('feature.destroy',['feature' => $desease->id ]) }}" method="post" onsubmit="return confirm('Are you sure you wish to delete?');">
@@ -22,6 +23,7 @@
             <button type="submit" class="btn btn-sm btn-outline-danger">O'chirish</button>
         </form>
     </div>
+    @endif
     @endcanany
     @endauth
 
